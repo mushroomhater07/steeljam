@@ -942,6 +942,7 @@ MonoBehaviour:
   score: 0
   scoreText: {fileID: 191896958}
   GameOverScreen: {fileID: 492529843}
+  spawnNumber: 0
 --- !u!114 &1031002259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -954,11 +955,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ee9a5e5df0b0541b5b9a6912626698, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin: {fileID: 3185125024616124182, guid: 15f1f2b2ba29003408e26cc8e762a3d8, type: 3}
+  coin: {fileID: 3185125024616124182, guid: 1295feaa5f59a9840be7f5645045a749, type: 3}
   spawnRate: 3
   spawnDelay: 0
   StrawberryNumber: 1
-  spawnNumber: 0
 --- !u!114 &1031002260
 MonoBehaviour:
   m_ObjectHideFlags: 0
