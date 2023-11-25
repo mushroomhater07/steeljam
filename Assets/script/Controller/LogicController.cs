@@ -28,7 +28,7 @@ public class LogicController : MonoBehaviour
     {
         if (nether) currenthealth -= Time.deltaTime * DMGinNetherRate;
         slidersss_instance.currentHealth = currenthealth;
-        UnityEngine.Tilemaps.Tilemap.
+        
             
     }
 

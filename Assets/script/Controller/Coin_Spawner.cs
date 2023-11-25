@@ -10,6 +10,7 @@ public class Coin_Spawner : MonoBehaviour
     [SerializeField] private float spawnDelay = 0;
     [SerializeField] private float StrawberryNumber = 1;
     private LogicController game;
+    public float spawnNumber;
     private float OffsetY;
     private float timer;
 
@@ -21,6 +22,15 @@ public class Coin_Spawner : MonoBehaviour
         OffsetY = -0.1f;
     }
 
+    public void AddStrawberry()
+    {
+        spawnNumber++;
+    }
+
+    public void GetStrawberry()
+    {
+        spawnNumber--;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -29,11 +39,11 @@ public class Coin_Spawner : MonoBehaviour
         else { 
             timer = 0;
             
-            if (game.spawnNumber < StrawberryNumber)
+            if (spawnNumber < StrawberryNumber)
             {
 
                 Instantiate(coin, new Vector3(Random.Range(-7, 7), OffsetY, transform.position.z), transform.rotation);
-                game.AddStrawberry();
+                AddStrawberry();
             }
         }
     }
