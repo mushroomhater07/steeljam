@@ -153,83 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 0
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 2
-  m_fontSizeBase: 2
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 0
-  m_fontSizeMax: 0
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 0
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &191896959
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -406,12 +329,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 866058533}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ee9a5e5df0b0541b5b9a6912626698, type: 3}
+  m_Script: {fileID: 11500000, guid: dc254a4152c830e4cb6d02159ae9c525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin: {fileID: 3185125024616124182, guid: 15f1f2b2ba29003408e26cc8e762a3d8, type: 3}
-  spawnRate: 3
-  spawnDelay: 0
 --- !u!4 &866058535
 Transform:
   m_ObjectHideFlags: 0
@@ -453,11 +373,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 903547995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cf3c44f0ba484447ab8278cff9f72cd, type: 3}
+  m_Script: {fileID: 11500000, guid: e8f79ccddb938ab40bb5098f1c10302f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
-  scoreText: {fileID: 191896958}
 --- !u!4 &903547997
 Transform:
   m_ObjectHideFlags: 0
@@ -514,11 +432,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1004978487}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f2ea94bc242b3f46a2ae3b10d69d12f, type: 3}
+  m_Script: {fileID: 11500000, guid: f6dcf0ed89f390d46a8e3265e267c0e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4817037835750316026, guid: e878031675ccf3145b694eb38bd8ef79, type: 3}
-  spawnRate: 3
 --- !u!1 &1031002254
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,16 +764,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1919620800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ede7a7751b7ddf4488f14ae6cd1e755b, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cb0d9993d62eab42a203c2b3add2d10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
-  jumpPower: 10
-  playerRigid: {fileID: 1919620803}
-  groundCheck: {fileID: 817065485}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!61 &1919620802
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -867,7 +776,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1919620800}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 7fb22682d289046449053648ed28a7e3, type: 2}
+  m_Material: {fileID: 6200000, guid: d1995a9c49c8d2c44903526112ec17a0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
