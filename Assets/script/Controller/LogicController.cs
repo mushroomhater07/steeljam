@@ -9,8 +9,9 @@ public class LogicController : MonoBehaviour
     public float score = 0;
     public TextMeshProUGUI scoreText;
     public GameObject GameOverScreen;
+    public float spawnNumber = 0;
 
-public void AddScore()
+    public void AddScore()
     { 
         score++;
         scoreText.text = score.ToString();
@@ -24,5 +25,14 @@ public void AddScore()
     public void GameOver()
     { 
         GameOverScreen.SetActive(true); 
+    }
+
+    public void GetStrawberry()
+    {
+        spawnNumber--;
+    }
+    public void AddStrawberry()
+    {
+        spawnNumber++;
     }
 }
