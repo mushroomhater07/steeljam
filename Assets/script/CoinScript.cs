@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CoinScript : MonoBehaviour
 {
 
     [SerializeField] private Coin_Spawner spawner;
-    private LogicController game;
+    private GameObject EventSystem;
+    private Coin_Spawner Coin_Spawner_instance;
+    private LogicController LogicController_instance;
     // Start is called before the first frame update
     void Start()
     {
-        game = GameObject.FindGameObjectWithTag("GameController").GetComponent<LogicController>();
+        EventSystem = GameObject.FindGameObjectWithTag("GameController");
+        Coin_Spawner_instance = EventSystem.GetComponent<Coin_Spawner>();
+        LogicController_instance = EventSystem.GetComponent<LogicController>();
     }
 
     // Update is called once per frame
@@ -24,8 +29,8 @@ public class CoinScript : MonoBehaviour
         if(collision.gameObject.layer == 3)
         { 
             Destroy(gameObject);
-            game.GetStrawberry();
-            game.AddScore();
+            Coin_Spawner_instance.GetStrawberry();
+            LogicController_instance.AddScore();
         }
     }
 }
