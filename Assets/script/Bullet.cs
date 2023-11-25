@@ -28,7 +28,9 @@ public class Bullet : MonoBehaviour
         if(collision.gameObject.layer ==3) { 
             Destroy(gameObject); 
         }
-        if (collision.gameObject.layer == 6) { 
+        if (collision.gameObject.layer == 6)
+        {
+            
             moveSpeed = moveSpeed*-1; 
         }
     }
