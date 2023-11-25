@@ -10,7 +10,7 @@ public class Buller_Spawner : MonoBehaviour
     [SerializeField] private float OffsetX = 0;
     [SerializeField] private float OffsetY = 0.8f;
     private float spawnNumber = 0;
-    private float spawnDelay = 2;
+    private float spawnDelay = 0;
     private float timer;
     private Vector3 spawnPosition;
 
