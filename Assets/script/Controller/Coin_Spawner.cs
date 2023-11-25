@@ -8,6 +8,8 @@ public class Coin_Spawner : MonoBehaviour
     [SerializeField] private GameObject coin;
     [SerializeField] private float spawnRate = 3;
     [SerializeField] private float spawnDelay = 0;
+    [SerializeField] private float StrawberryNumber = 1;
+    public int spawnNumber = 0;
     private float timer;
 
     // Start is called before the first frame update
@@ -23,7 +25,12 @@ public class Coin_Spawner : MonoBehaviour
         { timer += Time.deltaTime; }
         else { 
             timer = 0;
-            Instantiate(coin, new Vector3(Random.Range(-7, 7), transform.position.y, transform.position.z), transform.rotation);
+            
+            if (spawnNumber < StrawberryNumber)
+            {
+                Instantiate(coin, new Vector3(Random.Range(-7, 7), transform.position.y, transform.position.z), transform.rotation);
+                spawnNumber++;
+            }
         }
     }
 }

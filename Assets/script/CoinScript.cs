@@ -5,6 +5,7 @@ using UnityEngine;
 public class CoinScript : MonoBehaviour
 {
 
+    Coin_Spawner spawner;
     private LogicController game;
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class CoinScript : MonoBehaviour
         if(collision.gameObject.layer == 3)
         { 
             Destroy(gameObject);
+            spawner.spawnNumber--;
             game.AddScore();
         }
     }
