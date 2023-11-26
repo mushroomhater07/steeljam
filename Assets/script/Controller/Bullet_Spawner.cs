@@ -5,22 +5,24 @@ using UnityEngine;
 public class Buller_Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
-    [SerializeField] private float spawnRate = 3;
-    [SerializeField] private float EnemyNumber = 1;
+    [SerializeField] private float spawnRate = 0;
+    [SerializeField] private float EnemyNumber;
     [SerializeField] private float OffsetX = 0;
-    [SerializeField] private float OffsetY = 0.8f;
-    private float spawnNumber = 0;
+    [SerializeField] private float OffsetY;
+    private float spawnedNumber = 0;
     private float spawnDelay = 0;
     private float timer;
     private Vector3 spawnPosition;
+    private Vector3 newspawnPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-        spawnNumber = 0;
+        spawnedNumber = 0;
         timer -= spawnDelay;
         spawnPosition = transform.position;
-        spawnPosition.y = spawnPosition.y - OffsetY;
+        spawnPosition.y += OffsetY;
+        newspawnPosition = spawnPosition;
     }
 
     // Update is called once per frame
@@ -35,10 +37,12 @@ public class Buller_Spawner : MonoBehaviour
             timer = 0;
 
 
-            if (spawnNumber < EnemyNumber)
+            if (spawnedNumber < EnemyNumber)
             {
-                Instantiate(bullet, spawnPosition, transform.rotation);
-                spawnNumber++;
+                Debug.Log(spawnPosition.y);
+                newspawnPosition.x = spawnPosition.x + 5 + Random.Range(-7, 9);
+                Instantiate(bullet, newspawnPosition, transform.rotation);
+                spawnedNumber++;
             }
         }
     }
