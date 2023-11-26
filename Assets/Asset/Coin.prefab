@@ -100,7 +100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  deadZone: 15
 --- !u!58 &3716517013507032901
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -149,3 +148,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
+  StrawBerryHeal: 50

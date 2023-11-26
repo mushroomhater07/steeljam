@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class LogicController : MonoBehaviour
 {
     private float score = 0;
-    private float currenthealth = 0;
+    public float currenthealth = 0;
     [SerializeField] private float maxHealth;
 
     [SerializeField] private bool nether;
@@ -46,6 +46,10 @@ public class LogicController : MonoBehaviour
     public void AdjustHealth(float value)
     {
         currenthealth += value;
+        if (currenthealth > maxHealth)
+        {
+            currenthealth = maxHealth;
+        }
     }
 
     public void AddScore() { score++; scoreText.text = score.ToString();}  

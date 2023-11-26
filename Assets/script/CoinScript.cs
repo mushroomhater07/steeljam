@@ -7,6 +7,7 @@ public class CoinScript : MonoBehaviour
 {
 
     [SerializeField] private Coin_Spawner spawner;
+    [SerializeField] private float StrawBerryHeal;
     private GameObject EventSystem;
     private Coin_Spawner Coin_Spawner_instance;
     private LogicController LogicController_instance;
@@ -31,6 +32,7 @@ public class CoinScript : MonoBehaviour
             Destroy(gameObject);
             Coin_Spawner_instance.CurrentStrawBerryNumber--;
             LogicController_instance.AddScore();
+            LogicController_instance.AdjustHealth(StrawBerryHeal);
         }
     }
 }

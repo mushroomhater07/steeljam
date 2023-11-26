@@ -10,7 +10,6 @@ public class Coin_Spawner : MonoBehaviour
     [SerializeField] private float spawnRate = 3;
     [SerializeField] private float spawnDelay = 0;
     [SerializeField] private float StrawberryNumber = 1;
-    [SerializeField] private float StrawBerryHeal;
     private LogicController game;
     private float currentStrawBerryNumber;
     private float OffsetY;
@@ -40,8 +39,7 @@ public class Coin_Spawner : MonoBehaviour
             if (currentStrawBerryNumber < StrawberryNumber)
             {
                 Instantiate(coin, new Vector3(Random.Range(-7, 7), OffsetY+Mathf.Round(Random.Range(0,1f))*14, transform.position.z), transform.rotation,GameObject.FindGameObjectWithTag("NPC").transform);
-                currentStrawBerryNumber--;
-                game.AdjustHealth(StrawBerryHeal);
+                currentStrawBerryNumber++;
             }
         }
     }
