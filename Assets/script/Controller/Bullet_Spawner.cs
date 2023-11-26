@@ -39,7 +39,6 @@ public class Buller_Spawner : MonoBehaviour
 
             if (spawnedNumber < EnemyNumber)
             {
-                Debug.Log(spawnPosition.y);
                 newspawnPosition.x = spawnPosition.x + 5 + Random.Range(-7, 9);
                 Instantiate(bullet, newspawnPosition, transform.rotation);
                 spawnedNumber++;
