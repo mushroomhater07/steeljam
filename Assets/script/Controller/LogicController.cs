@@ -23,6 +23,8 @@ public class LogicController : MonoBehaviour
     [SerializeField] private Slider healthbar;
     [SerializeField] private Slider CountDown;
     public TMP_Text CoolDownDoneText;
+    private float goodWorldTimer;
+    [SerializeField]  private float maxTimeInGoodWorld = 5;
 
     private PlayerMovement pmovent;
     
@@ -32,6 +34,7 @@ public class LogicController : MonoBehaviour
         currenthealth = maxHealth;
         CountDown.maxValue = CoolDownTime;
         CountDown.value = currentCoolDown;
+        goodWorldTimer = 0;
         nether = false;
         ChangeDimension();
         
@@ -43,9 +46,23 @@ public class LogicController : MonoBehaviour
         {
             currentCoolDown -= Time.deltaTime;
             currenthealth -= Time.deltaTime * DMGinNetherRate;
-            if (currentCoolDown < 0)pmovent.EnableSwitch(true);else pmovent.EnableSwitch(false);
-        }else
-            pmovent.EnableSwitch(true);
+            if (currentCoolDown < 0) pmovent.EnableSwitch(true); else pmovent.EnableSwitch(false);
+        }
+        else
+        {
+            goodWorldTimer += Time.deltaTime;
+            if (goodWorldTimer < maxTimeInGoodWorld)
+            {
+                pmovent.EnableSwitch(false); // was true
+
+            }
+            else
+            {
+                pmovent.EnableSwitch(true);
+                ChangeDimension();
+            }
+        }
+
         CountDown.value = currentCoolDown;
         healthbar.value = currenthealth / maxHealth;
         
@@ -79,7 +96,7 @@ public class LogicController : MonoBehaviour
         foreach (var VARIABLE in FindObjectsOfType<TerrainScript>()) VARIABLE.ChangeColour(nether);
         
         
-        
+        goodWorldTimer = 0;
         
         
     }
