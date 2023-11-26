@@ -28,7 +28,7 @@ public class LogicController : MonoBehaviour
         currenthealth = maxHealth;
         slidersss_instance.CountDown.maxValue = CoolDownTime;
         slidersss_instance.CountDown.value = currentCoolDown;
-        nether = false;
+        nether = true;
         ChangeDimension();
     }
 
@@ -63,10 +63,21 @@ public class LogicController : MonoBehaviour
 
     public void ChangeDimension()
     {
-        if (nether )nether = false;else nether = true;
+        if (nether) nether = false;
+        else nether = true;
+        
         foreach (var VARIABLE in FindObjectsOfType<TerrainScript>())
         {
             VARIABLE.ChangeColour(nether);
+        }
+        foreach (var VARIABLE2 in FindObjectsOfType<CoinScript>())
+        {
+            VARIABLE2.gameObject.GetComponent<SpriteRenderer>().enabled = !nether;
+        }
+
+        foreach (var VARIABLE3 in FindObjectsOfType<Bullet>())
+        {
+            VARIABLE3.gameObject.GetComponent<SpriteRenderer>().enabled = nether;
         }
 
         ;

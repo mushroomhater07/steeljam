@@ -17,6 +17,10 @@ public class CoinScript : MonoBehaviour
         EventSystem = GameObject.FindGameObjectWithTag("GameController");
         Coin_Spawner_instance = EventSystem.GetComponent<Coin_Spawner>();
         LogicController_instance = EventSystem.GetComponent<LogicController>();
+        foreach (var VARIABLE2 in FindObjectsOfType<CoinScript>())
+        {
+            VARIABLE2.gameObject.GetComponent<SpriteRenderer>().enabled = !LogicController_instance.nether;
+        }
     }
 
     // Update is called once per frame
