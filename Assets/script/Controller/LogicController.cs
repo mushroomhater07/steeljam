@@ -47,6 +47,7 @@ public class LogicController : MonoBehaviour
             currentCoolDown -= Time.deltaTime;
             currenthealth -= Time.deltaTime * DMGinNetherRate;
             if (currentCoolDown < 0) pmovent.EnableSwitch(true); else pmovent.EnableSwitch(false);
+            CountDown.value = currentCoolDown;
         }
         else
         {
@@ -54,6 +55,7 @@ public class LogicController : MonoBehaviour
             if (goodWorldTimer < maxTimeInGoodWorld)
             {
                 pmovent.EnableSwitch(false); // was true
+                CountDown.value = (1 - (float)goodWorldTimer / (float)maxTimeInGoodWorld) * CountDown.maxValue;
 
             }
             else
@@ -63,7 +65,7 @@ public class LogicController : MonoBehaviour
             }
         }
 
-        CountDown.value = currentCoolDown;
+        //CountDown.value = currentCoolDown;
         healthbar.value = currenthealth / maxHealth;
         
         if(currenthealth<0) GameOver();
