@@ -28,7 +28,8 @@ public class LogicController : MonoBehaviour
         currenthealth = maxHealth;
         slidersss_instance.CountDown.maxValue = CoolDownTime;
         slidersss_instance.CountDown.value = currentCoolDown;
-        nether = true;
+        nether = false;
+        ChangeDimension();
     }
 
     private void Update()
@@ -63,6 +64,11 @@ public class LogicController : MonoBehaviour
     public void ChangeDimension()
     {
         if (nether )nether = false;else nether = true;
-        FindObjectOfType<TerrainScript>().ChangeColor(nether);
+        foreach (var VARIABLE in FindObjectsOfType<TerrainScript>())
+        {
+            VARIABLE.ChangeColour(nether);
+        }
+
+        ;
     }
 }
