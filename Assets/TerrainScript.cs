@@ -7,17 +7,15 @@ using UnityEngine.Tilemaps;
 
 public class TerrainScript : MonoBehaviour
 {
-    private LogicController LogicController_instance;
     [SerializeField] public Tilemap Tiles;
-    private Color color1 = new Vector4(1, 1, 1, 1);
+    private Color color1 = Color.white;
     private Color color2 = new Vector4(100 / 255f, 55 / 255f, 115 / 255f, 255 / 255f);
 
     // Start is called before the first frame update
     void Start()
     {
-        LogicController_instance = FindObjectOfType<LogicController>();
         Tiles = GetComponent<Tilemap>();
-        Tiles.color = color2;
+        /*Tiles.color = color2;*/
     }
 
     // Update is called once per frame
@@ -26,15 +24,19 @@ public class TerrainScript : MonoBehaviour
 
     }
 
-    public void ChangeColor()
+    public void ChangeColor(bool nether)
     {
-        if (LogicController_instance.nether)
+        
+        Tiles.color = Color.white;
+        if (nether)
         {
             Tiles.color = color2;
+            Debug.Log(nether);
         }
         else
         {
-            Tiles.color = color1;
+            Tiles.color = Color.white;
+            Debug.Log(nether);
         }
 
     }

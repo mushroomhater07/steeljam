@@ -28,6 +28,7 @@ public class LogicController : MonoBehaviour
         currenthealth = maxHealth;
         slidersss_instance.CountDown.maxValue = CoolDownTime;
         slidersss_instance.CountDown.value = currentCoolDown;
+        nether = true;
     }
 
     private void Update()
@@ -58,4 +59,10 @@ public class LogicController : MonoBehaviour
     private void GameOver()
     {
         gameOverScore.text = scoreText.text; GameOverScreen.SetActive(true); }
+
+    public void ChangeDimension()
+    {
+        if (nether )nether = false;else nether = true;
+        FindObjectOfType<TerrainScript>().ChangeColor(nether);
+    }
 }
