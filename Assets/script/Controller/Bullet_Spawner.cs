@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Buller_Spawner : MonoBehaviour
+public class Bullet_Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
     [SerializeField] private float spawnRate = 0;
     [SerializeField] private float EnemyNumber;
     [SerializeField] private float OffsetX = 0;
     [SerializeField] private float OffsetY;
-    private float spawnedNumber = 0;
+    public float spawnedNumber = 0;
     private float spawnDelay = 0;
     private float timer;
     private Vector3 spawnPosition;
