@@ -1799,7 +1799,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd0aa8d1e3cc5824786cfb31ea00d84f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tiles: {fileID: 0}
 --- !u!61 &802573106
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6987,7 +6986,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd0aa8d1e3cc5824786cfb31ea00d84f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tiles: {fileID: 986852549}
 --- !u!61 &986852553
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7088,12 +7086,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1031002257}
   - component: {fileID: 1031002256}
-  - component: {fileID: 1031002255}
   - component: {fileID: 1031002258}
   - component: {fileID: 1031002259}
   - component: {fileID: 1031002260}
   - component: {fileID: 1031002261}
   - component: {fileID: 1031002262}
+  - component: {fileID: 1031002263}
   m_Layer: 7
   m_Name: EventSystem
   m_TagString: GameController
@@ -7101,26 +7099,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1031002255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1031002254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &1031002256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7234,6 +7212,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthbar: {fileID: 1104875759}
   CountDown: {fileID: 1469171175}
+--- !u!114 &1031002263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031002254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!1 &1104875756
 GameObject:
   m_ObjectHideFlags: 0
@@ -8092,7 +8100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd0aa8d1e3cc5824786cfb31ea00d84f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tiles: {fileID: 0}
 --- !u!61 &1774203702
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9486,7 +9493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
