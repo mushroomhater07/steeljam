@@ -17,10 +17,6 @@ public class Bullet : MonoBehaviour
     {
         Bullet_Spawner_instance = FindObjectOfType<Bullet_Spawner>();
         LogicController_instance = EventSystem.GetComponent<LogicController>();
-        foreach (var VARIABLE3 in FindObjectsOfType<Bullet>())
-        {
-            VARIABLE3.gameObject.GetComponent<SpriteRenderer>().enabled = LogicController_instance.nether;
-        }
     }
 
     // Update is called once per frame
