@@ -62,8 +62,8 @@ public class LogicController : MonoBehaviour
     }
 
     public void AddScore() { score++; scoreText.text = score.ToString();}  
-    public void RestartGame() { SceneManager.LoadScene(SceneManager.GetActiveScene().name);FindObjectOfType<PlayerMovement>().actionmaps.Enable(); }
-    public void GameOver() { gameOverScore.text = scoreText.text; GameOverScreen.SetActive(true); FindObjectOfType<PlayerMovement>().actionmaps.Disable();}
+    public void RestartGame() { SceneManager.LoadScene(SceneManager.GetActiveScene().name);FindObjectOfType<PlayerMovement>().actionmaps.Enable(); pmovent.DieAnimation(false);}
+    public void GameOver() { gameOverScore.text = scoreText.text; GameOverScreen.SetActive(true); FindObjectOfType<PlayerMovement>().actionmaps.Disable();pmovent.DieAnimation(true);}
 
     public void ChangeDimension()
     {

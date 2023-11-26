@@ -1027,7 +1027,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 0}
+  m_BackGroundColor: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -7454,7 +7454,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press "E" or hold L and R mouse button to switch
+  m_text: 'Cool Down Complete!!
+
+    Press "E" or hold L and R mouse button to switch
+    Dimension'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7481,8 +7484,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 31.5
+  m_fontSizeBase: 31.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9639,7 +9642,7 @@ MonoBehaviour:
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
   m_XDamping: 0.45
-  m_YDamping: 0.45
+  m_YDamping: 1.8
   m_ZDamping: 1
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
@@ -9705,6 +9708,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.028556459
       objectReference: {fileID: 0}
+    - target: {fileID: 3989195336026596739, guid: 7febc391da6e7b4438f47cf6b835613e, type: 3}
+      propertyPath: m_GravityScale
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4606107907711147376, guid: 7febc391da6e7b4438f47cf6b835613e, type: 3}
       propertyPath: m_LocalScale.x
       value: 10
@@ -9763,7 +9770,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5104182371680364854, guid: 7febc391da6e7b4438f47cf6b835613e, type: 3}
       propertyPath: jumpPower
-      value: 20
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 5104182371680364854, guid: 7febc391da6e7b4438f47cf6b835613e, type: 3}
       propertyPath: monsterDMG

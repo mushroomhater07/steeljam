@@ -175,6 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 8
   jumpPower: 10
+  monsterDMG: 0
   playerRigid: {fileID: 3989195336026596739}
   groundCheck: {fileID: 8881098950954290742}
   groundLayer:
@@ -190,7 +191,7 @@ Animator:
   m_GameObject: {fileID: 1888664771592077326}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ca83832d62862ad4f82ea2e42668c3c9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6861abe2cd260d548899c2908ce0b6a4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

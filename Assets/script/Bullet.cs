@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class Bullet : MonoBehaviour
 {
-
+    private Animator ani;
     [SerializeField] private float moveSpeed = 50;
     private GameObject EventSystem;
     private LogicController LogicController_instance;
@@ -15,6 +12,7 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
+        ani = GetComponent<Animator>();
         EventSystem = GameObject.FindGameObjectWithTag("GameController");
         Bullet_Spawner_instance = FindObjectOfType<Bullet_Spawner>();
         LogicController_instance = EventSystem.GetComponent<LogicController>();
@@ -40,6 +38,8 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.layer == 6 && dirChangeTimeOut < 0)
         {
             moveSpeed = moveSpeed*-1;
+            if(moveSpeed > 0) {ani.SetInteger("control",0);}
+            else{ani.SetInteger("control",1);}
             dirChangeTimeOut = 0.4f;
         }
     }
