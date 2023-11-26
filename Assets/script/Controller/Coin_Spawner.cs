@@ -41,8 +41,7 @@ public class Coin_Spawner : MonoBehaviour
             
             if (spawnNumber < StrawberryNumber)
             {
-
-                Instantiate(coin, new Vector3(Random.Range(-7, 7), OffsetY, transform.position.z), transform.rotation);
+                Instantiate(coin, new Vector3(Random.Range(-7, 7), OffsetY+Mathf.Round(Random.Range(0,1f))*14, transform.position.z), transform.rotation);
                 AddStrawberry();
             }
         }
