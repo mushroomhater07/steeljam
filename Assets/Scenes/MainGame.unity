@@ -9443,6 +9443,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5104182371680364854, guid: 7febc391da6e7b4438f47cf6b835613e, type: 3}
+      propertyPath: monsterDMG
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 8881098950954290742, guid: 7febc391da6e7b4438f47cf6b835613e, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.12
