@@ -7,16 +7,17 @@ using UnityEngine.UI;
 public class LogicController : MonoBehaviour
 {
     private float score = 0;
-    public float currenthealth = 0;
+    private float currenthealth = 0;
     [SerializeField] private float maxHealth;
 
-    [SerializeField] private bool nether;
+    public bool nether;
     [SerializeField] private float DMGinNetherRate;
     [SerializeField]private float CoolDownTime;
-    public float currentCoolDown;
+    private float currentCoolDown;
     
-    public TextMeshProUGUI scoreText;
-    public GameObject GameOverScreen;
+    [SerializeField] private TMP_Text scoreText;
+    [SerializeField] private GameObject GameOverScreen;
+    [SerializeField] private TMP_Text gameOverScore;
 
     private Slidersss slidersss_instance;
 
@@ -54,5 +55,7 @@ public class LogicController : MonoBehaviour
 
     public void AddScore() { score++; scoreText.text = score.ToString();}  
     public void RestartGame() { SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
-    private void GameOver() { GameOverScreen.SetActive(true); }
+    private void GameOver()
+    {
+        gameOverScore.text = scoreText.text; GameOverScreen.SetActive(true); }
 }
