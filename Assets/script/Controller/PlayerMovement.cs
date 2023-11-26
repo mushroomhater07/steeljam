@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     {
         actionmaps = new InputAct().Game;
         actionmaps.Enable();
-        
+        actionmaps.switch1.performed += ctx => FindObjectOfType<LogicController>().ChangeDimension();
     }
     void Update()
     {

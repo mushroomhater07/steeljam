@@ -46,7 +46,7 @@ public partial class @InputAct: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""switch"",
+                    ""name"": ""switch1"",
                     ""type"": ""Button"",
                     ""id"": ""5260744b-84d5-4c87-8a88-1537e6bd878c"",
                     ""expectedControlType"": ""Button"",
@@ -184,51 +184,40 @@ public partial class @InputAct: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""switch"",
+                    ""action"": ""switch1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""Two Modifiers"",
-                    ""id"": ""6a190468-006d-434e-92a5-b26e91fa2c4f"",
-                    ""path"": ""TwoModifiers"",
+                    ""name"": ""One Modifier"",
+                    ""id"": ""f9177f86-bb04-4fc5-8003-1bc112805428"",
+                    ""path"": ""OneModifier"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""switch"",
+                    ""action"": ""switch1"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""modifier1"",
-                    ""id"": ""2cd55edb-7b08-451b-8394-c0a9f7bd7afb"",
+                    ""name"": ""modifier"",
+                    ""id"": ""92a1e34f-4817-41de-a687-0b166416c5e5"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""switch"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""modifier2"",
-                    ""id"": ""cf6103de-9af5-4f1e-9703-e35b84f51b34"",
-                    ""path"": ""<Mouse>/rightButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""switch"",
+                    ""action"": ""switch1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""binding"",
-                    ""id"": ""ea2d3433-1008-47cb-bcbf-d63e8cda7666"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""id"": ""cc5a0f31-76a4-402b-85f5-3805b23e9c2a"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""switch"",
+                    ""action"": ""switch1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -241,7 +230,7 @@ public partial class @InputAct: IInputActionCollection2, IDisposable
         m_Game = asset.FindActionMap("Game", throwIfNotFound: true);
         m_Game_Walk = m_Game.FindAction("Walk", throwIfNotFound: true);
         m_Game_Jump = m_Game.FindAction("Jump", throwIfNotFound: true);
-        m_Game_switch = m_Game.FindAction("switch", throwIfNotFound: true);
+        m_Game_switch1 = m_Game.FindAction("switch1", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -305,14 +294,14 @@ public partial class @InputAct: IInputActionCollection2, IDisposable
     private List<IGameActions> m_GameActionsCallbackInterfaces = new List<IGameActions>();
     private readonly InputAction m_Game_Walk;
     private readonly InputAction m_Game_Jump;
-    private readonly InputAction m_Game_switch;
+    private readonly InputAction m_Game_switch1;
     public struct GameActions
     {
         private @InputAct m_Wrapper;
         public GameActions(@InputAct wrapper) { m_Wrapper = wrapper; }
         public InputAction @Walk => m_Wrapper.m_Game_Walk;
         public InputAction @Jump => m_Wrapper.m_Game_Jump;
-        public InputAction @switch => m_Wrapper.m_Game_switch;
+        public InputAction @switch1 => m_Wrapper.m_Game_switch1;
         public InputActionMap Get() { return m_Wrapper.m_Game; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -328,9 +317,9 @@ public partial class @InputAct: IInputActionCollection2, IDisposable
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
-            @switch.started += instance.OnSwitch;
-            @switch.performed += instance.OnSwitch;
-            @switch.canceled += instance.OnSwitch;
+            @switch1.started += instance.OnSwitch1;
+            @switch1.performed += instance.OnSwitch1;
+            @switch1.canceled += instance.OnSwitch1;
         }
 
         private void UnregisterCallbacks(IGameActions instance)
@@ -341,9 +330,9 @@ public partial class @InputAct: IInputActionCollection2, IDisposable
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
-            @switch.started -= instance.OnSwitch;
-            @switch.performed -= instance.OnSwitch;
-            @switch.canceled -= instance.OnSwitch;
+            @switch1.started -= instance.OnSwitch1;
+            @switch1.performed -= instance.OnSwitch1;
+            @switch1.canceled -= instance.OnSwitch1;
         }
 
         public void RemoveCallbacks(IGameActions instance)
@@ -365,6 +354,6 @@ public partial class @InputAct: IInputActionCollection2, IDisposable
     {
         void OnWalk(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnSwitch(InputAction.CallbackContext context);
+        void OnSwitch1(InputAction.CallbackContext context);
     }
 }

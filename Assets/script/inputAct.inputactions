@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "switch",
+                    "name": "switch1",
                     "type": "Button",
                     "id": "5260744b-84d5-4c87-8a88-1537e6bd878c",
                     "expectedControlType": "Button",
@@ -162,51 +162,40 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "switch",
+                    "action": "switch1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "Two Modifiers",
-                    "id": "6a190468-006d-434e-92a5-b26e91fa2c4f",
-                    "path": "TwoModifiers",
+                    "name": "One Modifier",
+                    "id": "f9177f86-bb04-4fc5-8003-1bc112805428",
+                    "path": "OneModifier",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "switch",
+                    "action": "switch1",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "modifier1",
-                    "id": "2cd55edb-7b08-451b-8394-c0a9f7bd7afb",
+                    "name": "modifier",
+                    "id": "92a1e34f-4817-41de-a687-0b166416c5e5",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "switch",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "modifier2",
-                    "id": "cf6103de-9af5-4f1e-9703-e35b84f51b34",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "switch",
+                    "action": "switch1",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "binding",
-                    "id": "ea2d3433-1008-47cb-bcbf-d63e8cda7666",
-                    "path": "<Keyboard>/e",
+                    "id": "cc5a0f31-76a4-402b-85f5-3805b23e9c2a",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "switch",
+                    "action": "switch1",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
