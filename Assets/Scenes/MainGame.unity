@@ -660,7 +660,7 @@ GameObject:
   - component: {fileID: 439253649}
   m_Layer: 0
   m_Name: NPCs
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6892,11 +6892,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf3c44f0ba484447ab8278cff9f72cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
-  currenthealth: 0
   maxHealth: 130
   nether: 0
-  DMGinNetherRate: 0
+  DMGinNetherRate: 1
+  CoolDownTime: 6
+  currentCoolDown: 0
   scoreText: {fileID: 360071364}
   GameOverScreen: {fileID: 1485199924}
 --- !u!114 &1031002259
@@ -6915,7 +6915,6 @@ MonoBehaviour:
   spawnRate: 3
   spawnDelay: 0
   StrawberryNumber: 1
-  spawnNumber: 0
 --- !u!114 &1031002260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6974,7 +6973,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1104875757}
   - component: {fileID: 1104875759}
-  - component: {fileID: 1104875758}
   m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
@@ -7004,19 +7002,6 @@ RectTransform:
   m_AnchoredPosition: {x: -510, y: 409.19806}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1104875758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104875756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbf791915cc164e4c8c3a69dabd347e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainSlider: {fileID: 0}
 --- !u!114 &1104875759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7406,7 +7391,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1469171173}
   - component: {fileID: 1469171175}
-  - component: {fileID: 1469171174}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -7436,19 +7420,6 @@ RectTransform:
   m_AnchoredPosition: {x: 599.2, y: 405.98798}
   m_SizeDelta: {x: 135.181, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1469171174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469171172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbf791915cc164e4c8c3a69dabd347e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainSlider: {fileID: 0}
 --- !u!114 &1469171175
 MonoBehaviour:
   m_ObjectHideFlags: 0

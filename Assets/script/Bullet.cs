@@ -6,15 +6,9 @@ public class Bullet : MonoBehaviour
 {
 
     [SerializeField] private float moveSpeed = 50;
-    [SerializeField] private float deadZone = 1500;
+    // [SerializeField] private float deadZone = 1500;
 
     float dirChangeTimeOut = 0;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -22,7 +16,7 @@ public class Bullet : MonoBehaviour
         /*
         if (transform.position.x > deadZone)
         { Destroy(gameObject); } */
-        transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+        transform.position += Vector3.right * (moveSpeed * Time.deltaTime);
 
         dirChangeTimeOut -= Time.deltaTime;
     }

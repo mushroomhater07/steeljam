@@ -6,12 +6,14 @@ using UnityEngine.UI;
 
 public class LogicController : MonoBehaviour
 {
-    public float score = 0;
-    public float currenthealth = 0;
-    [SerializeField] float maxHealth;
-    
+    private float score = 0;
+    private float currenthealth = 0;
+    [SerializeField] private float maxHealth;
+
     [SerializeField] private bool nether;
     [SerializeField] private float DMGinNetherRate;
+    [SerializeField]private float CoolDownTime;
+    public float currentCoolDown;
     
     public TextMeshProUGUI scoreText;
     public GameObject GameOverScreen;
@@ -23,11 +25,19 @@ public class LogicController : MonoBehaviour
         slidersss_instance = GetComponent<Slidersss>();
         slidersss_instance.maxHealth = this.maxHealth;
         currenthealth = maxHealth;
+        slidersss_instance.CountDown.maxValue = CoolDownTime;
+        slidersss_instance.CountDown.value = currentCoolDown;
     }
 
     private void Update()
     {
-        if (nether) currenthealth -= Time.deltaTime * DMGinNetherRate;
+        if (nether)
+        {
+            currentCoolDown -= Time.deltaTime;
+            currenthealth -= Time.deltaTime * DMGinNetherRate;
+        }
+        else currentCoolDown = CoolDownTime;
+        slidersss_instance.CountDown.value = currentCoolDown;
         slidersss_instance.CurrentHealth = currenthealth;
         if(currenthealth<0)GameOver();
             

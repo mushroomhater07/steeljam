@@ -29,7 +29,7 @@ public class CoinScript : MonoBehaviour
         if(collision.gameObject.layer == 3)
         { 
             Destroy(gameObject);
-            Coin_Spawner_instance.GetStrawberry();
+            Coin_Spawner_instance.CurrentStrawBerryNumber--;
             LogicController_instance.AddScore();
         }
     }

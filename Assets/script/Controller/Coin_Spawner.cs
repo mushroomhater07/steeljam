@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Coin_Spawner : MonoBehaviour
 {
@@ -10,26 +11,22 @@ public class Coin_Spawner : MonoBehaviour
     [SerializeField] private float spawnDelay = 0;
     [SerializeField] private float StrawberryNumber = 1;
     private LogicController game;
-    public float spawnNumber;
+    private float currentStrawBerryNumber;
     private float OffsetY;
     private float timer;
+
+    public float CurrentStrawBerryNumber
+    {
+        get=> currentStrawBerryNumber;
+        set => currentStrawBerryNumber = value;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        game = GameObject.FindGameObjectWithTag("GameController").GetComponent<LogicController>();
+        game = FindObjectOfType<LogicController>();
         timer -= spawnDelay;
         OffsetY = -0.1f;
-    }
-
-    public void AddStrawberry()
-    {
-        spawnNumber++;
-    }
-
-    public void GetStrawberry()
-    {
-        spawnNumber--;
     }
     // Update is called once per frame
     void Update()
@@ -39,10 +36,10 @@ public class Coin_Spawner : MonoBehaviour
         else { 
             timer = 0;
             
-            if (spawnNumber < StrawberryNumber)
+            if (currentStrawBerryNumber < StrawberryNumber)
             {
-                Instantiate(coin, new Vector3(Random.Range(-7, 7), OffsetY+Mathf.Round(Random.Range(0,1f))*14, transform.position.z), transform.rotation);
-                AddStrawberry();
+                Instantiate(coin, new Vector3(Random.Range(-7, 7), OffsetY+Mathf.Round(Random.Range(0,1f))*14, transform.position.z), transform.rotation,GameObject.FindGameObjectWithTag("NPC").transform);
+                currentStrawBerryNumber--;
             }
         }
     }

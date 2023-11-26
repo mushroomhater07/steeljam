@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float moveSpeed = 1;
     [SerializeField] private float jumpPower = 1;
+
+    [SerializeField] private float monsterDMG;
     private float horizontal;
     private bool alive = true;
     private LogicController game;
@@ -56,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
             // alive = false;
             // playerRigid.velocity = new Vector2(0, -5);
             // Destroy(gameObject.GetComponent<BoxCollider2D>());
-            FindObjectOfType<LogicController>().AdjustHealth(-10f);
+            FindObjectOfType<LogicController>().AdjustHealth(monsterDMG * -1f);
         }
     }
 }
