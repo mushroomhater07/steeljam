@@ -1,6 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,46 +12,39 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float monsterDMG;
     private float horizontal;
     private bool alive = true;
-    private LogicController game;
 
     [SerializeField] private Rigidbody2D playerRigid;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
-    // Start is called before the first frame update
+    InputAct.GameActions actionmaps;
+
     void Start()
     {
-        game = GameObject.FindGameObjectWithTag("GameController").GetComponent<LogicController>();
+        actionmaps = new InputAct().Game;
+        actionmaps.Enable();
+        
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (alive)
         {
-            horizontal = Input.GetAxisRaw("Horizontal");
-
-            if (Input.GetButtonDown("Jump") && IsGrounded())
+            // Debug.Log(Input.GetAxis("Horizontal"));
+            horizontal = actionmaps.Walk.ReadValue<float>();
+            // Input.GetButtonUp("Jump")
+            if (actionmaps.Jump.triggered && IsGrounded())
             {
                 playerRigid.velocity = new Vector2(playerRigid.velocity.x, jumpPower);
             }
 
-            if (Input.GetButtonUp("Jump") && playerRigid.velocity.y > 0f)
+            if (actionmaps.Jump.triggered && playerRigid.velocity.y > 0f)
             {
                 playerRigid.velocity = new Vector2(playerRigid.velocity.x, playerRigid.velocity.y * 0.5f);
             }
         }
     }
-    private void FixedUpdate()
-    {
-        playerRigid.velocity = new Vector2(horizontal * moveSpeed, playerRigid.velocity.y);
-
-    }
-    private bool IsGrounded()
-    {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-    }
-
+    private void FixedUpdate() { playerRigid.velocity = new Vector2(horizontal * moveSpeed, playerRigid.velocity.y); }
+    private bool IsGrounded() { return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer); }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.layer == 7)
