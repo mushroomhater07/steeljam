@@ -964,7 +964,7 @@ GameObject:
   - component: {fileID: 641595938}
   - component: {fileID: 641595937}
   m_Layer: 5
-  m_Name: Canvas Behind Camera (1)
+  m_Name: Canvas Overlay UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1066,7 +1066,7 @@ GameObject:
   - component: {fileID: 767160058}
   - component: {fileID: 767160057}
   m_Layer: 5
-  m_Name: Canvas Overlay
+  m_Name: Canvas Overlay GameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6866,8 +6866,8 @@ MonoBehaviour:
   maxHealth: 130
   nether: 0
   DMGinNetherRate: 0
-  scoreText: {fileID: 0}
-  GameOverScreen: {fileID: 0}
+  scoreText: {fileID: 360071364}
+  GameOverScreen: {fileID: 1485199924}
 --- !u!114 &1031002259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6931,8 +6931,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931e084ffad9e584e85bc9f6f8447f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthbar: {fileID: 0}
-  CountDown: {fileID: 0}
+  healthbar: {fileID: 1104875759}
+  CountDown: {fileID: 1469171175}
 --- !u!1 &1104875756
 GameObject:
   m_ObjectHideFlags: 0
@@ -9448,11 +9448,11 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1031002257}
   - {fileID: 519420032}
   - {fileID: 1918450784}
   - {fileID: 5184285507306837535}
   - {fileID: 1233356139}
-  - {fileID: 1031002257}
   - {fileID: 641595940}
-  - {fileID: 1446164095}
   - {fileID: 767160060}
+  - {fileID: 1446164095}

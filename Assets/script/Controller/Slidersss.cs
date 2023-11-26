@@ -20,6 +20,7 @@ using UnityEngine.UI;
 
         private void Update()
         {
+            
             healthbar.value = currentHealth / maxHealth;
             // CountDown.value = countdownTimer;
         }
