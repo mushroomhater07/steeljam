@@ -4,9 +4,16 @@ using UnityEngine.UI;
 
     public class Slidersss : MonoBehaviour
     {
-        public float maxHealth;
-        public float countdownTimer;
-        public float currentHealth; //dont set anything
+        public float maxHealth { get; set; }
+        private float countdownTimer{ get; set; }
+
+        public float CurrentHealth
+        {
+            get => currentHealth;
+            set => currentHealth = value;
+        }
+
+        private float currentHealth; //dont set anything
         
         [SerializeField] private Slider healthbar;
         [SerializeField] private Slider CountDown;

@@ -53,10 +53,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.gameObject.layer == 7)
         {
-            alive = false;
-            playerRigid.velocity = new Vector2(0, -5);
-            Destroy(gameObject.GetComponent<BoxCollider2D>());
-            game.GameOver();
+            // alive = false;
+            // playerRigid.velocity = new Vector2(0, -5);
+            // Destroy(gameObject.GetComponent<BoxCollider2D>());
+            FindObjectOfType<LogicController>().AdjustHealth(-10f);
         }
     }
 }
