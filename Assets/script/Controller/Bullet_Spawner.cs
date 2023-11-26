@@ -40,7 +40,7 @@ public class Bullet_Spawner : MonoBehaviour
             if (spawnedNumber < EnemyNumber)
             {
                 newspawnPosition.x = spawnPosition.x + 5 + Random.Range(-7, 9);
-                Instantiate(bullet, newspawnPosition, transform.rotation,GameObject.Find("NPCs").transform);
+                Instantiate(bullet, newspawnPosition, transform.rotation,GameObject.FindGameObjectWithTag("NPC").transform);
                 spawnedNumber++;
             }
         }

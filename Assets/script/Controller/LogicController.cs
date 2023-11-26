@@ -19,17 +19,22 @@ public class LogicController : MonoBehaviour
     [SerializeField] private GameObject GameOverScreen;
     [SerializeField] private TMP_Text gameOverScore;
 
-    private Slidersss slidersss_instance;
+    [SerializeField] private Image background;
+    [SerializeField] private Slider healthbar;
+    [SerializeField] private Slider CountDown;
+    public TMP_Text CoolDownDoneText;
 
+    private PlayerMovement pmovent;
+    
     public void Start()
     {
-        slidersss_instance = GetComponent<Slidersss>();
-        slidersss_instance.maxHealth = this.maxHealth;
+        pmovent = FindObjectOfType<PlayerMovement>();
         currenthealth = maxHealth;
-        slidersss_instance.CountDown.maxValue = CoolDownTime;
-        slidersss_instance.CountDown.value = currentCoolDown;
-        nether = true;
+        CountDown.maxValue = CoolDownTime;
+        CountDown.value = currentCoolDown;
+        nether = false;
         ChangeDimension();
+        
     }
 
     private void Update()
@@ -38,12 +43,13 @@ public class LogicController : MonoBehaviour
         {
             currentCoolDown -= Time.deltaTime;
             currenthealth -= Time.deltaTime * DMGinNetherRate;
-        }
-        else currentCoolDown = CoolDownTime;
-        slidersss_instance.CountDown.value = currentCoolDown;
-        slidersss_instance.CurrentHealth = currenthealth;
-        if(currenthealth<0)GameOver();
-            
+            if (currentCoolDown < 0)pmovent.EnableSwitch(true);else pmovent.EnableSwitch(false);
+        }else
+            pmovent.EnableSwitch(true);
+        CountDown.value = currentCoolDown;
+        healthbar.value = currenthealth / maxHealth;
+        
+        if(currenthealth<0) GameOver();
     }
 
     public void AdjustHealth(float value)
@@ -56,30 +62,25 @@ public class LogicController : MonoBehaviour
     }
 
     public void AddScore() { score++; scoreText.text = score.ToString();}  
-    public void RestartGame() { SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
-    private void GameOver()
-    {
-        gameOverScore.text = scoreText.text; GameOverScreen.SetActive(true); }
+    public void RestartGame() { SceneManager.LoadScene(SceneManager.GetActiveScene().name);FindObjectOfType<PlayerMovement>().actionmaps.Enable(); }
+    public void GameOver() { gameOverScore.text = scoreText.text; GameOverScreen.SetActive(true); FindObjectOfType<PlayerMovement>().actionmaps.Disable();}
 
     public void ChangeDimension()
     {
-        if (nether) nether = false;
-        else nether = true;
+        currentCoolDown = CoolDownTime;
+        if (nether) { nether = false;
+            background.sprite = Resources.Load<Sprite>("clou");
+            FindObjectOfType<Camera>().cullingMask = LayerMask.GetMask("Default", "Ground", "Player", "Strawberries",
+                "Water", "Ignore Raycast", "UI", "TransparentFX"); }
+        else { nether = true;
+            background.sprite = Resources.Load<Sprite>("cav");
+            FindObjectOfType<Camera>().cullingMask = FindObjectOfType<Camera>().cullingMask = LayerMask.GetMask("Default", "Ground", "Player", "Bullets",
+                "Water", "Ignore Raycast", "UI", "TransparentFX"); }
+        foreach (var VARIABLE in FindObjectsOfType<TerrainScript>()) VARIABLE.ChangeColour(nether);
         
-        foreach (var VARIABLE in FindObjectsOfType<TerrainScript>())
-        {
-            VARIABLE.ChangeColour(nether);
-        }
-        foreach (var VARIABLE2 in FindObjectsOfType<CoinScript>())
-        {
-            VARIABLE2.gameObject.GetComponent<SpriteRenderer>().enabled = !nether;
-        }
-
-        foreach (var VARIABLE3 in FindObjectsOfType<Bullet>())
-        {
-            VARIABLE3.gameObject.GetComponent<SpriteRenderer>().enabled = nether;
-        }
-
-        ;
+        
+        
+        
+        
     }
 }

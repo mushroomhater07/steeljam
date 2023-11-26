@@ -16,12 +16,7 @@ public class CoinScript : MonoBehaviour
     {
         EventSystem = GameObject.FindGameObjectWithTag("GameController");
         Coin_Spawner_instance = EventSystem.GetComponent<Coin_Spawner>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        LogicController_instance = EventSystem.GetComponent<LogicController>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

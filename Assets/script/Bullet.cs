@@ -15,6 +15,7 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
+        EventSystem = GameObject.FindGameObjectWithTag("GameController");
         Bullet_Spawner_instance = FindObjectOfType<Bullet_Spawner>();
         LogicController_instance = EventSystem.GetComponent<LogicController>();
     }

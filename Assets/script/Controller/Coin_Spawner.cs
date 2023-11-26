@@ -38,7 +38,7 @@ public class Coin_Spawner : MonoBehaviour
             
             if (currentStrawBerryNumber < StrawberryNumber)
             {
-                Instantiate(coin, new Vector3(Random.Range(-7, 7), OffsetY+Mathf.Round(Random.Range(0,1f))*14, transform.position.z), transform.rotation,GameObject.Find("bad_guys").transform);
+                Instantiate(coin, new Vector3(Random.Range(-7, 7), OffsetY+Mathf.Round(Random.Range(0,1f))*14, transform.position.z), transform.rotation,GameObject.FindGameObjectWithTag("NPC").transform);
                 currentStrawBerryNumber++;
             }
         }
